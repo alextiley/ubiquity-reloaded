@@ -928,8 +928,6 @@
                 </DockPanel.Style>
 
                 <!--GameList-->
-                <!--TODO:
-                                Decrease top margin in grid view-->
                 <Grid Focusable="True"
                   FocusManager.FocusedElement="{Binding ElementName=PART_ListGameItems}"
                   Margin="-140,0,-20,-101">
@@ -938,8 +936,9 @@
                     Background="Transparent" BorderThickness="0"
                     DockPanel.Dock="Right" FocusVisualStyle="{x:Null}"
                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                    ScrollViewer.VerticalScrollBarVisibility="Visible"
-                    KeyboardNavigation.DirectionalNavigation="Once">
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                    KeyboardNavigation.DirectionalNavigation="Once"
+                    Margin="0,-70,0,0">
 
                     <ListBoxEx.Style>
                       <Style TargetType="ListBoxEx">
