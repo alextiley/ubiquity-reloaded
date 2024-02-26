@@ -928,8 +928,11 @@
                                 </DockPanel.Style>
 
                                 <!--GameList-->
-                                <!--TODO: Decrease top margin in grid view-->
-                                <Grid Focusable="True" FocusManager.FocusedElement="{Binding ElementName=PART_ListGameItems}" Margin="-140,0,-20,-101">
+                                <!--TODO:
+                                Decrease top margin in grid view-->
+                                <Grid Focusable="True"
+                                    FocusManager.FocusedElement="{Binding ElementName=PART_ListGameItems}"
+                                    Margin="-140,0,-20,-101">
                                     <ListBoxEx
                                         x:Name="PART_ListGameItems"
                                         Background="Transparent" BorderThickness="0"
@@ -941,7 +944,8 @@
                                         <ListBoxEx.Style>
                                             <Style TargetType="ListBoxEx">
                                                 <Setter Property="Height" Value="auto" />
-                                                <!--Horizontal View-->
+                                                <!--Horizontal
+                                                View-->
                                                 <Style.Triggers>
                                                     <MultiDataTrigger>
                                                         <MultiDataTrigger.Conditions>
@@ -951,7 +955,8 @@
                                                         </MultiDataTrigger.Conditions>
                                                         <Setter Property="ListBoxEx.OpacityMask">
                                                             <Setter.Value>
-                                                                <LinearGradientBrush StartPoint="0,0"
+                                                                <LinearGradientBrush
+                                                                    StartPoint="0,0"
                                                                     EndPoint="0.05,0">
                                                                     <GradientStop Color="#00000000"
                                                                         Offset="0" />
@@ -1394,10 +1399,9 @@
                             </Grid>
 
                             <!--Sidebar-->
-                            <!-- Add the following to forward focus to the FilterPresetSelector control -->
-                            <!-- TODO: Update FilterPresetSelector control to forward focus state to currently active filter -->
-                            <!-- Focusable="True" FocusManager.FocusedElement="{Binding ElementName=PART_FilterPresetSelector}" -->
-                            <Grid Grid.Column="0" Grid.Row="1" Background="Transparent">
+                            <Grid Grid.Column="0" Grid.Row="1" Background="Transparent"
+                                Focusable="True"
+                                FocusManager.FocusedElement="{Binding ElementName=PART_FilterPresetSelector}">
                                 <!--Fade
                                 In Sidebar-->
                                 <Grid.Style>
@@ -1849,13 +1853,13 @@
 
                             <!--Grid
                             Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom"
-                            HorizontalAlignment="Center" Panel.ZIndex="-56" >	
+                            HorizontalAlignment="Center" Panel.ZIndex="-56" >
 		   						<Border CornerRadius="0" Height="100" Width="9200" Margin="0,-9,0,0">
                                     <Border.Background>
                                        <ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile
                             'Images/Icons/Details/gridviewbar.png'}"/>
                                      </Border.Background>
-								</Border>	
+								</Border>
 							</Grid-->
 
                         </StackPanel>
