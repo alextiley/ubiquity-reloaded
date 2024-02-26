@@ -1212,9 +1212,9 @@
                   </StackPanel.Style>
                   <!--Profile
                                     Avatar -->
-                  <Border CornerRadius="50" Height="46" Width="46"
+                  <Border CornerRadius="50" Height="40" Width="40"
                     VerticalAlignment="Top" HorizontalAlignment="Left"
-                    Margin="-271,37,0,0" IsEnabled="False" Focusable="False">
+                    Margin="-261,40,0,0" IsEnabled="False" Focusable="False">
                     <Border.Background>
                       <ImageBrush RenderOptions.BitmapScalingMode="Fant"
                         ImageSource="{ThemeFile 'Images/Profile.png.'}" />
@@ -1240,9 +1240,9 @@
                   </StackPanel.Style>
                   <!--Profile
                                     Avatar Gridview-->
-                  <Border CornerRadius="50" Height="46" Width="46"
+                  <Border CornerRadius="50" Height="40" Width="40"
                     VerticalAlignment="Top" HorizontalAlignment="Left"
-                    Margin="-271,37,0,0" IsEnabled="False" Focusable="False">
+                    Margin="-261,40,0,0" IsEnabled="False" Focusable="False">
                     <Border.Background>
                       <ImageBrush RenderOptions.BitmapScalingMode="Fant"
                         ImageSource="{ThemeFile 'Images/Profile.png.'}" />
@@ -1253,8 +1253,8 @@
                 <!--Menu
                                 Button-->
                 <ButtonEx x:Name="PART_ButtonMainMenu" Grid.Column="0"
-                  Style="{DynamicResource ButtonTopMenu}" Margin="-220,20,221,0"
-                  Height="54" Width="54" Background="Transparent">
+                  Style="{DynamicResource ButtonTopMenu}" Margin="-213,20,221,0"
+                  Height="40" Width="40" Background="Transparent">
                   <Button.Content>
                     <TextBlock Text="&#xefa2;"
                       FontFamily="{StaticResource FontIcoFont}"
@@ -1815,12 +1815,10 @@
 
               <!--Change
                             View Button-->
-              <CheckBoxEx x:Name="ChangeViewButton" Height="48" Width="48"
-                Margin="-135,-20,0,0" Grid.Column="0" Grid.Row="3"
+              <CheckBoxEx x:Name="ChangeViewButton" Height="35" Width="35"
+                Margin="-136,-20,0,0" Grid.Column="0" Grid.Row="3"
                 IsChecked="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}"
                 Style="{DynamicResource ChangeViewButton}" />
-
-
             </Grid>
 
             <!--GameDetails
