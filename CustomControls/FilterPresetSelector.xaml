@@ -66,8 +66,6 @@
   </Style>
 
   <Style TargetType="{x:Type FilterPresetSelector}">
-    <!-- TODO Set this to true to make this focusable, and then forward the focus via
-    FocusManager.FocusedElement -->
     <Setter Property="Focusable" Value="False" />
 
     <Setter Property="Template">
