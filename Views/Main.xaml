@@ -458,29 +458,50 @@
                             Foreground="White" />
                         </StackPanel>
 
-                        <!--TextBlock
-                                                Style="{DynamicResource TextBlockBaseStyle}"
-                                               Text="{Binding SelectedGame.CompletionStatus}" Foreground="#26ff8e" FontSize="19" FontFamily="Segoe
-                                                UI" Margin="0,-40,20,0"/>
-
-                                                                <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
-                                               Text="{Binding SelectedGame.Publishers[0]}" FontSize="19" FontFamily="Segoe UI"
-                                                Foreground="LightGray" MaxWidth="600"
-                                                TextTrimming="WordEllipsis" Margin="-15,-40,0,0"/-->
-
                         <TextBlock
+                          x:Name="PublisherTextBlock"
                           Style="{DynamicResource TextBlockBaseStyle}"
                           Text="{Binding SelectedGame.Publishers[0]}"
                           FontSize="19" FontFamily="Segoe UI"
                           Foreground="LightGray" MaxWidth="600"
                           TextTrimming="WordEllipsis" Margin="8,-40,0,0" />
 
+                        <!-- bullet point, only shown if release year is available -->
                         <TextBlock Margin="0,-34,0,0" Text="h"
                           FontFamily="Marlett" FontSize="16"
                           Foreground="LightGray"
                           HorizontalAlignment="Center"
-                          VerticalAlignment="Top" />
+                          VerticalAlignment="Top">
+                          <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                              <Style.Triggers>
+                                <DataTrigger
+                                  Binding="{Binding Text, ElementName=PublisherTextBlock}"
+                                  Value="">
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger
+                                  Binding="{Binding Text, ElementName=PublisherTextBlock}"
+                                  Value="{x:Null}">
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger
+                                  Binding="{Binding Text, ElementName=ReleaseYearTextBlock}"
+                                  Value="">
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger
+                                  Binding="{Binding Text, ElementName=ReleaseYearTextBlock}"
+                                  Value="{x:Null}">
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                              </Style.Triggers>
+                            </Style>
+                          </TextBlock.Style>
+                        </TextBlock>
+
                         <TextBlock
+                          x:Name="ReleaseYearTextBlock"
                           Style="{DynamicResource TextBlockBaseStyle}"
                           Text="{Binding SelectedGame.ReleaseYear}"
                           FontSize="19" FontFamily="Segoe UI"
