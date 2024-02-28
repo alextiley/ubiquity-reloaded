@@ -58,6 +58,57 @@
   <Style TargetType="ToggleButtonEx" BasedOn="{StaticResource {x:Type ToggleButton}}">
   </Style>
 
+  <Style x:Key="IconToggleButtonStyle" TargetType="ToggleButton"
+    BasedOn="{StaticResource {x:Type ToggleButton}}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ToggleButton">
+          <Grid Background="{TemplateBinding Background}">
+            <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+              Foreground="{TemplateBinding Foreground}"
+              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+              Margin="{TemplateBinding Padding}">
+              <ContentPresenter x:Name="UncheckedContentPresenter"
+                Content="{TemplateBinding Content}" />
+              <ContentPresenter x:Name="CheckedContentPresenter" Content="{TemplateBinding Tag}"
+                Visibility="Collapsed" />
+            </TextBlock>
+
+            <Border BorderThickness="{TemplateBinding BorderThickness}"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              x:Name="BorderStandard" CornerRadius="0" />
+
+            <Border x:Name="BorderFocus" Margin="-3"
+              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+              BorderBrush="{DynamicResource GlyphBrush}"
+              BorderThickness="0" Visibility="Hidden" CornerRadius="0" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+              <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
+              <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+              <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Background" Value="{DynamicResource GlyphLightBrush}" />
+              <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+              <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+              <Setter TargetName="UncheckedContentPresenter" Property="Visibility" Value="Collapsed" />
+              <Setter TargetName="CheckedContentPresenter" Property="Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+
   <Style x:Key="ChangeViewButton" TargetType="ToggleButton">
     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
     <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />

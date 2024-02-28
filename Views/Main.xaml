@@ -60,8 +60,10 @@
                 </Style>
               </Grid.Style>
             </Grid>
-            <!--Background
-                        Aero-->
+            <!-- Background Aero -->
+            <!-- This is the background image blur effect -->
+            <!-- It is shown full screen in grid view -->
+            <!-- It is shown behind the background image in horizontal view -->
             <Grid x:Name="MainGrid" Panel.ZIndex="-46" Width="Auto"
               VerticalAlignment="Center">
 
@@ -193,8 +195,7 @@
               </Grid>
             </Grid>
 
-            <!--Screen
-                        Bottomfade-->
+            <!-- Screen Bottomfade -->
             <Border CornerRadius="0" Height="1080" Width="Auto" VerticalAlignment="Top"
               Margin="0,0,0,0" Grid.ZIndex="-1">
               <Border.Background>
@@ -202,6 +203,7 @@
                   ImageSource="{ThemeFile 'Images/Icons/Details/fade_screen.png'}" />
               </Border.Background>
             </Border>
+
             <!--Main-->
             <Grid x:Name="PART_ViewHost">
               <!--Main
@@ -254,7 +256,12 @@
                 <RowDefinition Height="100" />
               </Grid.RowDefinitions>
 
-              <!--Background-->
+              <!-- Background image, displayed top right but with a margin of 200 left and bottom to
+              ensure that the main part of the image is visible above the game list -->
+              <!-- A blurred version of the background is shown in the 200px gaps to give the
+              appearance that the BG is 100% of the screen -->
+              <!-- Fade left and bottom images are rendered over the bottom and left edges to blend
+              into the main image and blurry bg image -->
               <Border x:Name="BackgroundImageBorder" Grid.Column="0"
                 Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"
                 VerticalAlignment="Top" HorizontalAlignment="Right"
@@ -342,6 +349,7 @@
                     Stretch="UniformToFill" />
                 </Border.OpacityMask>
               </Border>
+              <!-- end background image -->
 
               <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"
                 Orientation="Vertical" VerticalAlignment="Top"

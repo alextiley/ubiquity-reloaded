@@ -51,6 +51,8 @@
   <SolidColorBrush x:Key="BorderBrush" Color="{DynamicResource BorderColor}" />
   <SolidColorBrush x:Key="GlyphLightBrush" Color="{DynamicResource GlyphLightColor}" />
   <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
+  <SolidColorBrush x:Key="OpaqueControlBackgroundBrush"
+    Color="{DynamicResource ControlBackgroundColor}" Opacity="0.5" />
   <SolidColorBrush x:Key="ControlBackgroundDarkBrush"
     Color="{DynamicResource ControlBackgroundColorDark}" />
   <SolidColorBrush x:Key="SelectionLightBrush" Color="{DynamicResource SelectionLightColor}" />
