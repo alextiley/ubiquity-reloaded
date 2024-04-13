@@ -1552,8 +1552,16 @@
                     <Style TargetType="StackPanel">
                       <Setter Property="Margin" Value="0,0,20,0" />
                       <Style.Triggers>
-                        <DataTrigger
-                          Binding="{Binding SelectedGame.Source.Name}">
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}">
+                          <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}" Value="">
+                          <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}" Value="{x:Null}">
+                          <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}" Value="EmuLibrary">
                           <Setter Property="Visibility" Value="Collapsed" />
                         </DataTrigger>
                       </Style.Triggers>
@@ -1562,7 +1570,35 @@
                   <Image x:Name="LibraryIcon"
                     RenderOptions.BitmapScalingMode="Fant" MaxHeight="36"
                     Source="{ThemeFileBinding SelectedGame.Source.Name, PathFormat='Images/Icons/Source/{0}.png'}" />
+                </StackPanel>
 
+                <!--Platform
+                Icon Top Right-->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top"
+                  HorizontalAlignment="Right" Margin="0,-64,85,0">
+                  <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                      <Setter Property="Margin" Value="0,0,20,0" />
+                      <Setter Property="Visibility" Value="Collapsed" />
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}">
+                          <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}" Value="">
+                          <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}" Value="{x:Null}">
+                          <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}" Value="EmuLibrary">
+                          <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </StackPanel.Style>
+                  <Image x:Name="LibraryIconPlatform"
+                    RenderOptions.BitmapScalingMode="Fant" MaxHeight="36"
+                    Source="{ThemeFileBinding SelectedGame.Platforms[0].Name, PathFormat='Images/Icons/Source/{0}.png'}" />
                 </StackPanel>
               </StackPanel>
 
